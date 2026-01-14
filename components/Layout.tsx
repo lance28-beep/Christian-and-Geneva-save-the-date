@@ -112,6 +112,7 @@ export default function Layout({ children }: LayoutProps) {
         <meta property="og:locale" content="en_PH" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={eventImageUrl} />
+        <meta property="og:image:url" content={eventImageUrl} />
         <meta property="og:image:secure_url" content={eventImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
