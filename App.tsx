@@ -87,7 +87,7 @@ const App: React.FC = () => {
                  details={details} 
                  onRSVP={() => setShowRSVP(true)} 
                  guestCount={guestCount}
-                 onViewGuestBook={() => setShowGuestBook(true)}
+                 onViewGuestBook={() => {}}
                />
             </div>
           </main>

@@ -116,16 +116,15 @@ const InvitationCard: React.FC<Props> = ({ details, onRSVP, guestCount, onViewGu
 
             {/* Guest Counter - Enhanced for desktop */}
             {guestCount !== null && (
-              <button 
-                onClick={onViewGuestBook}
-                className="mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 flex items-center gap-2 lg:gap-3 text-gray-500 hover:text-gold transition-all duration-300 text-xs sm:text-sm lg:text-base xl:text-lg group/counter focus:outline-none focus:ring-2 focus:ring-gold/50 focus:ring-offset-2 focus:ring-offset-paper rounded px-2 py-1 lg:px-3 lg:py-2"
-                aria-label={`View guest book with ${guestCount} confirmed guests`}
+              <div 
+                className="mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 flex items-center gap-2 lg:gap-3 text-gray-500 text-xs sm:text-sm lg:text-base xl:text-lg group/counter rounded px-2 py-1 lg:px-3 lg:py-2"
+                aria-label={`${guestCount} ${guestCount === 1 ? 'Guest' : 'Guests'} Confirmed`}
               >
-                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 transition-transform duration-300 group-hover/counter:scale-110 lg:group-hover/counter:scale-125" />
-                <span className="font-serif tracking-widest lg:tracking-[0.15em] border-b border-transparent group-hover/counter:border-gold pb-0.5 lg:pb-1 transition-all duration-300">
+                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                <span className="font-serif tracking-widest lg:tracking-[0.15em] pb-0.5 lg:pb-1">
                   {guestCount} {guestCount === 1 ? 'Guest' : 'Guests'} Confirmed
                 </span>
-              </button>
+              </div>
             )}
          </div>
       </div>
