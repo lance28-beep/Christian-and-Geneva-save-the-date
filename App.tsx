@@ -11,8 +11,8 @@ import { InvitationDetails } from './types';
 const details: InvitationDetails = {
   groom: "Christian",
   bride: "Geneva",
-  date: "March 2027",
-  location: "Palawan, Philippines",
+  date: "March 8 2027",
+  location: "Astoria Palawan, Philippines",
   rsvpContact: "0426572257 | 0491174764"
 };
 
@@ -87,7 +87,7 @@ const App: React.FC = () => {
                  details={details} 
                  onRSVP={() => setShowRSVP(true)} 
                  guestCount={guestCount}
-                 onViewGuestBook={() => {}}
+                 onViewGuestBook={() => setShowGuestBook(true)}
                />
             </div>
           </main>

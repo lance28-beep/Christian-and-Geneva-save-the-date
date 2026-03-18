@@ -126,6 +126,15 @@ const InvitationCard: React.FC<Props> = ({ details, onRSVP, guestCount, onViewGu
                 </span>
               </div>
             )}
+
+            <button
+              type="button"
+              onClick={onViewGuestBook}
+              className="mt-3 sm:mt-4 font-serif uppercase tracking-[0.22em] text-[10px] sm:text-xs md:text-sm text-gray-600 hover:text-gold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper rounded-sm px-2 py-1"
+              aria-label="Open the guest book"
+            >
+              View Guest Book
+            </button>
          </div>
       </div>
     </div>
