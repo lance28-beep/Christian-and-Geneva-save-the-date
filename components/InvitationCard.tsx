@@ -102,39 +102,37 @@ const InvitationCard: React.FC<Props> = ({ details, onRSVP, guestCount, onViewGu
             
             <button 
               onClick={onRSVP}
-              className="relative bg-gradient-to-br from-ink via-ink to-gray-800 text-paper font-serif uppercase tracking-[0.2em] lg:tracking-[0.25em] text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg py-3 sm:py-3.5 md:py-4 lg:py-5 xl:py-6 px-8 sm:px-10 md:px-12 lg:px-16 xl:px-20 rounded-sm hover:from-gold hover:via-gold/90 hover:to-gold transition-all duration-500 shadow-lg shadow-ink/20 hover:shadow-xl hover:shadow-gold/30 hover:-translate-y-1 lg:hover:-translate-y-2 active:translate-y-0 active:shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper overflow-hidden group/btn"
+              className="relative isolate bg-gradient-to-br from-ink via-ink to-gray-800 text-paper font-serif uppercase tracking-[0.24em] lg:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg py-3 sm:py-3.5 md:py-4 lg:py-5 xl:py-6 px-9 sm:px-12 md:px-14 lg:px-18 xl:px-22 rounded-sm transition-all duration-500 shadow-lg shadow-ink/20 hover:shadow-xl hover:shadow-gold/30 hover:-translate-y-1 lg:hover:-translate-y-2 active:translate-y-0 active:shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper overflow-hidden group/btn"
               aria-label="Confirm your seat for the wedding"
             >
+              <span className="absolute inset-0 -z-10 bg-gradient-to-br from-ink via-ink to-gray-800 group-hover/btn:from-gold group-hover/btn:via-gold/90 group-hover/btn:to-gold transition-colors duration-500" />
               <span className="relative z-10 flex items-center gap-2 lg:gap-3">
                 <span>Confirm Seat</span>
                 <svg className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 transition-transform duration-300 group-hover/btn:translate-x-1 lg:group-hover/btn:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-120%] group-hover/btn:translate-x-[120%] transition-transform duration-1000" />
+              <span className="pointer-events-none absolute -inset-1 rounded-sm opacity-0 blur-md bg-gold/30 group-hover/btn:opacity-100 transition-opacity duration-500" />
             </button>
 
             {/* Guest Counter - Enhanced for desktop */}
             {guestCount !== null && (
-              <div 
-                className="mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 flex items-center gap-2 lg:gap-3 text-gray-500 text-xs sm:text-sm lg:text-base xl:text-lg group/counter rounded px-2 py-1 lg:px-3 lg:py-2"
-                aria-label={`${guestCount} ${guestCount === 1 ? 'Guest' : 'Guests'} Confirmed`}
+              <button
+                type="button"
+                onClick={onViewGuestBook}
+                className="mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 inline-flex items-center gap-2 lg:gap-3 text-gray-500 text-xs sm:text-sm lg:text-base xl:text-lg rounded-sm px-2 py-1 lg:px-3 lg:py-2 transition-all duration-300 hover:text-gold hover:bg-gold/5 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper"
+                aria-label={`Open guest book. ${guestCount} ${guestCount === 1 ? 'Guest' : 'Guests'} Confirmed`}
               >
                 <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
                 <span className="font-serif tracking-widest lg:tracking-[0.15em] pb-0.5 lg:pb-1">
                   {guestCount} {guestCount === 1 ? 'Guest' : 'Guests'} Confirmed
                 </span>
-              </div>
+                {/* <span className="font-serif uppercase tracking-[0.22em] text-[9px] sm:text-[10px] lg:text-xs text-gray-400 group-hover:text-gold/80">
+                  Guest Book
+                </span> */}
+              </button>
             )}
-
-            <button
-              type="button"
-              onClick={onViewGuestBook}
-              className="mt-3 sm:mt-4 font-serif uppercase tracking-[0.22em] text-[10px] sm:text-xs md:text-sm text-gray-600 hover:text-gold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper rounded-sm px-2 py-1"
-              aria-label="Open the guest book"
-            >
-              View Guest Book
-            </button>
          </div>
       </div>
     </div>
